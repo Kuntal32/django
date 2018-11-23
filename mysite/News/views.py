@@ -4,7 +4,9 @@ from django.shortcuts import HttpResponse
 # Create your views here.
 
 def home(request):
-    context = {"title" : "Welcome Home"}
+    context = {"title" : "Welcome Home",
+               "mylist": ["Kuntal","soumaya"]
+              }
     return render(request , "home.html", context)
 
 def contact(request):
