@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content  %}  
+<h1> {{ title }} </h1>
+<h2>New for {{ year }}</h2>
+
+{% for list in articals %}
+    <h3><b>{{ list.author }} >>></b> {{ list.title }}</h3>
+    <p>{{ list.description }}</p>
+{% endfor %}
+
+{% endblock %}
