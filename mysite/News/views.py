@@ -28,3 +28,11 @@ def year(request, year):
     context = {"title" : "News Year!", "year":year, "articals": a_list}
     return render(request , "news_year.html", context)
 
+def all_news(request):
+    a_list = News.objects.all()
+    context = {"title" : "News!",  "articals": a_list}
+    return render(request , "all_news.html", context)
+
+def register(request):
+    context = {"title" : "Register"}
+    return render(request , "register.html", context)
