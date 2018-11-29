@@ -10,7 +10,18 @@
     <link type="text/css" rel="stylesheet" href="{% static '/css/style.css' %}" />
 </head>
 <body>
-    {% include 'navbar.html' %}
-    {% block content  %}  {% endblock %}
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+             {% include 'navbar.html' %}
+        </header>
+    <main role="main" class="inner cover">
+        {% block content  %}  {% endblock %}
+    </main>
+    <footer class="mastfoot mt-auto">
+            <div class="inner">
+              <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+    </footer>
+    </div>
 </body>
 </html>

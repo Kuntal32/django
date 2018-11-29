@@ -1,9 +1,10 @@
-<nav>
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'contact' %}">Contact Us</a></li>
-        <li><a href="{% url 'about' %}">About Us</a></li>
-        <li><a href="{% url 'news' %}">News Details</a></li>
-        <li><a href="{% url 'add_user' %}">Register</a></li>
-    </ul>
-</nav>
+<div class="inner">
+    <h3 class="masthead-brand">Django</h3>
+    <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="{% url 'home' %}">Home</a>
+        <a class="nav-link" href="{% url 'allnews' %}">All News</a>
+        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        <a class="nav-link"  href="{% url 'add_user' %}">Register</a>
+    </nav>
+</div>

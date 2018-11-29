@@ -11,4 +11,5 @@ urlpatterns = [
     path('news_details/', views.news_details , name="news"),
     path('year/<int:year>', views.year , name="year"),
     path('register/', views.register , name="add_user"),
+    path('addUser/', views.addUser , name="addUser"),
 ]

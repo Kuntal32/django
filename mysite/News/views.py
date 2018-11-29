@@ -1,12 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
-from .models import News
+from .models import News, RegistrationData
+from .forms import RegistrationForms
 
 # Create your views here.
 
 def home(request):
     context = {"title" : "Welcome Home",
-               "mylist": ["Kuntal","soumaya"]
+               "mylist": ["Kuntal","Arup"]
               }
     return render(request , "home.html", context)
 
@@ -34,5 +35,16 @@ def all_news(request):
     return render(request , "all_news.html", context)
 
 def register(request):
-    context = {"title" : "Register"}
+    context = {"title" : "Register","form":RegistrationForms}
     return render(request , "register.html", context)
+
+def addUser(request):
+    form = RegistrationForms(request.POST)
+
+    if form.is_valid():
+        register = RegistrationData(username = form.cleaned_data['username'],
+                                    password = form.cleaned_data['password'],
+                                    email = form.cleaned_data['email'],
+                                    phone = form.cleaned_data['phone'])
+        register.save()
+        return redirect('add_user')
